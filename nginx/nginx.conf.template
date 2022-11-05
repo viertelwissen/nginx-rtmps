@@ -1,0 +1,51 @@
+worker_processes auto;
+rtmp_auto_push on;
+rtmp_auto_push_reconnect 1s;
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile           on;
+    keepalive_timeout  65;
+    server_tokens      off;
+
+    #auth_basic
+    #auth_file
+
+    server {
+        listen 8080;
+        listen [::]:8080;
+        server_name  rtmp.stats;
+
+        location / {
+            rtmp_stat all;
+            rtmp_stat_stylesheet stat.xsl;
+        }
+
+        location /stat.xsl {
+            root /usr/local/nginx/html/stat/;
+        }
+    }
+}
+
+rtmp {
+    server {
+        listen 1935;
+        listen [::]:1935;
+        chunk_size 4096;
+
+        application #application {
+            live on;
+            record off;
+            #twitch
+            #youtube
+            #trovo
+            #facebook
+            #instagram
+        }
+    }
+}
