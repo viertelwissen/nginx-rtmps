@@ -1,6 +1,6 @@
 # nginx-rtmps
 
-[![Github Workflow Status](https://img.shields.io/github/workflow/status/viertelwissen/nginx-rtmps/build-docker-image)](https://github.com/viertelwissen//releases/latest)
+[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/viertelwissen/nginx-rtmps/build-docker-image.yml)]()
 [![Docker Pulls](https://img.shields.io/docker/pulls/viertelwissen/nginx-rtmps)](https://hub.docker.com/r/viertelwissen/nginx-rtmps)
 [![Twitch Status](https://img.shields.io/twitch/status/viertelwissen?style=social)](https://twitch.tv/viertelwissen)
 
@@ -33,7 +33,7 @@ YOUTUBE_KEY | (leer) | ja | Der YouTube Streaming Key
 TROVO_KEY | (leer) | ja | Der Trovo Streaming Key (ist sehr lang)
 INSTAGRAM_KEY | (leer) | ja | Der Instagram Streaming Key
 FACEBOOK_KEY | (leer) | ja | Der Facebook Streaming Key
-APPLICATION_NAME | live | ja | Dieser Wert wird für die verbindung zum RTMP-Server benötigt. Es ist empfehlenswert, hier einen kryptischen Wert zu nutzen.
+APPLICATION_NAME | live | ja | Dieser Wert wird für die Verbindung zum RTMP-Server benötigt. Es ist empfehlenswert, hier einen kryptischen Wert zu nutzen.
 WEB_USER | (leer) | ja | Benutzername, um die Statistikseite zu schützen. Sonst ist sie frei abrufbar.
 WEB_PASSWORD | (leer) | ja | Passwort, um die Statistikseite zu schützen. Sonst ist sie frei abrufbar.
 DEBUG | (leer) | ja | Auf "true" setzen, wenn nach dem Start die komplette nginx Konfiguration im Log ausgegeben werden soll (zur Kontrolle).
