@@ -34,6 +34,7 @@ TROVO_KEY | (leer) | ja | Der Trovo Streaming Key (ist sehr lang)
 INSTAGRAM_KEY | (leer) | ja | Der Instagram Streaming Key
 FACEBOOK_KEY | (leer) | ja | Der Facebook Streaming Key
 APPLICATION_NAME | live | ja | Dieser Wert wird für die Verbindung zum RTMP-Server benötigt. Es ist empfehlenswert, hier einen kryptischen Wert zu nutzen.
+RELAY_APP | (leer)) | ja | Weiterer Stream, der nur als Relay eingesetzt werden kann und nicht automatsich an einen Dienst geschickt wird.
 WEB_USER | (leer) | ja | Benutzername, um die Statistikseite zu schützen. Sonst ist sie frei abrufbar.
 WEB_PASSWORD | (leer) | ja | Passwort, um die Statistikseite zu schützen. Sonst ist sie frei abrufbar.
 DEBUG | (leer) | ja | Auf "true" setzen, wenn nach dem Start die komplette nginx Konfiguration im Log ausgegeben werden soll (zur Kontrolle).
