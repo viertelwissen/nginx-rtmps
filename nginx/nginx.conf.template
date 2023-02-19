@@ -46,5 +46,7 @@ rtmp {
             #facebook
             #instagram
         }
+
+        #Relay
     }
 }
