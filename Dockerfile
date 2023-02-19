@@ -8,7 +8,7 @@ ENV NGINX_RTMP_MODULE_VERSION 1.2.2
 
 # Install dependencies
 RUN apt-get update && \
-    apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext apache2-utils && \
+    apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext apache2-utils gawk && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and decompress Nginx
@@ -100,6 +100,9 @@ ENV WEB_USER ""
 
 #Web-Password
 ENV WEB_PASSWORD ""
+
+# Relay App
+ENV RELAY_APP ""
 
 ENV DEBUG ""
 
