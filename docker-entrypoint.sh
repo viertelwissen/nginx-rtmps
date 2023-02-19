@@ -48,6 +48,14 @@ else
 	sed -i 's|#instagram| |g' $NGINX_TEMPLATE
 fi
 
+if [ -n "${RELAY_APP}" ]; then
+	echo "Custom Relay activated."
+	awk -i inplace '/#Relay/{print $0 RS "       application ${RELAY_APP} {" RS "            live on;" RS "            record off;" RS "       }";next}1' $NGINX_TEMPLATE
+	ENV_OK=1
+else 
+	sed -i 's|#relay| |g' $NGINX_TEMPLATE
+fi
+
 # setup application name (default: live)
 echo "Set application name to: $APPLICATION_NAME"
 sed -i 's|#application|'"$APPLICATION_NAME"'|g' $NGINX_TEMPLATE
@@ -81,6 +89,6 @@ fi
 
 stunnel4
 
-echo "Setup finished, starting nginx."
+echo "Setup finished, starting nginx..."
 
 exec "$@"
