@@ -16,6 +16,7 @@ services:
       #WEB_USER: username
       #WEB_PASSWORD: password
       #APPLICATION_NAME: "secretName-default:live"
+      #RELAY_APP: ""
       #TWITCH_KEY: ""
       #YOUTUBE_KEY: ""
       #TROVO_KEY: ""
