@@ -23,9 +23,23 @@ Zur Ausführung des Containers muss der Port 1935 (RTMP) geöffnet werden und de
 docker run -d -p 1935:1935 -e TWITCH_KEY=secretKey -e YOUTUBE_KEY=secretKey viertelwissen/nginx-rtmps
 ```
 
-Alternativ kann auch eine `docker-compose.yml` genutzt werden, ein Beispiel befindet sich im Github Repository.
+Die Stream-URL sieht dann folgendermaßen aus: `rtmp://$SERVER_IP:1935/live`. In OBS wird die komplette Adresse als Server eingetragen, der Streamschlüssel kann frei gewählt werden.
+
+### URL verschleiern
+Es ist empfehlenswert, die Variable "APPLICATION_NAME" mit anzugeben und einen kryptischen Wert zu nutzen, damit die URL nicht von anderen erraten werden kann. 
+
+Beispiel: `-e APPLICATION_NAME="finisher-chubby8-possibly-sacred-patient-simplify"`. Eure URL lautet dann `rtmp://$SERVER_IP:1935/finisher-chubby8-possibly-sacred-patient-simplify`
+
+So eine Passphrase kann leicht mit einem Passwort-Generator erstellt werden, wie zum Beispiel mit dem [Online-Tool von Bitwarden](https://bitwarden.com/password-generator/).
+
+## docker-compose
+Alternativ kann auch docker-compose genutzt werden. Eine Beispieldatei (`docker-compose.yml`) findest du hier im Github-Repository.
 
 ## Umgebungsvariablen
+
+> **:warning: Dollar-Zeichen (\$) müssen in der docker-compose.yml gedoppelt werden.**  
+> Beispiel: Streaming-Key "live_s3cre\$t1-blabla" wird zu "live_s3cre\$\$t1-blabla"
+
 Variable | Standard | Optional | Beschreibung
 -------- | -------- |--------- | ------------
 TWITCH_KEY | (leer) | ja | Der Twitch Streaming Key
